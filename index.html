@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Salon</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    header {
+      background: #c62828;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #e53935;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: #b71c1c;
+    }
+
+    .section {
+      display: none;
+      padding: 2rem;
+    }
+
+    .active {
+      display: block;
+    }
+
+    footer {
+      background: #c62828;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Salon</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('services')">Services</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+  <section id="home" class="section active">
+    <h2>Home</h2>
+    <p>Welcome to our salon! We offer the best grooming and beauty services in town. Visit us to experience a relaxing and professional atmosphere.</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Services</h2>
+    <ul>
+      <li>Hair Cutting</li>
+      <li>Facial Treatments</li>
+      <li>Hair Coloring</li>
+      <li>Beard Styling</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Phone: 071-1234567</p>
+    <p>Email: info@mysalon.lk</p>
+    <p>Address: 123, Main Street, Colombo</p>
+  </section>
+
+  <footer>
+    &copy; 2025 My Salon. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
